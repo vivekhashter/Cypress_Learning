@@ -1,0 +1,33 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Install npm dependencies and cache them
+      - name: Install Dependencies
+        run: npm install
+
+      # Build the project
+      - name: Build
+        run: npm run build
+
+      # Start the application in the background
+      - name: Start Application
+        run: npm start &
+      
+      # Delay to allow the application to start before running tests
+      - name: Wait for Application
+        run: sleep 10
+      
+      # Run Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
