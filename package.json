@@ -1,0 +1,14 @@
+{
+  "name": "cypress-interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vivek sharma",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.7.3"
+  }
+}
